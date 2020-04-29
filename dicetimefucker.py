@@ -10,7 +10,13 @@ count_accounts = int(input("Input Counts Accounts: "))
 for i in range(count_accounts):
     with Client("my_account" + str(i), api_id, api_hash) as app:
         for i in config.chats:
-            app.join_chat(i)
-            time.sleep(3)
-            app.send_message(i, "dice time")
-            time.sleep(3)
+            try:
+                try:
+                    app.join_chat(i)
+                except:
+                    pass
+                time.sleep(3)
+                app.send_message(i, "dice time")
+                time.sleep(3)
+            except:
+                pass
