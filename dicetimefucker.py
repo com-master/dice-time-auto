@@ -16,7 +16,7 @@ for i in range(count_accounts):
                 except:
                     pass
                 time.sleep(3)
-                app.send_message(i, "dice time")
+                app.send_message(i, comfig.text)
                 time.sleep(3)
             except:
                 pass
